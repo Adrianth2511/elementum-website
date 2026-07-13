@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Company */}
         <div className={styles.col}>
           <h3 className={styles.colTitle}>Company</h3>
-          <ul role="list">
+          <ul>
             {footerData.company.map((item) => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} className={styles.footerLink}>{item}</a>
@@ -26,7 +26,7 @@ export default function Footer() {
         {/* Terms & Policies */}
         <div className={styles.col}>
           <h3 className={styles.colTitle}>Terms & Policies</h3>
-          <ul role="list">
+          <ul>
             {footerData.termsLeft.map((item) => (
               <li key={item}>
                 <a href="#contact" className={styles.footerLink}>{item}</a>
@@ -38,7 +38,7 @@ export default function Footer() {
         {/* Follow Us */}
         <div className={styles.col}>
           <h3 className={styles.colTitle}>Follow Us</h3>
-          <ul role="list">
+          <ul>
             {footerData.social.map((item) => (
               <li key={item}>
                 <a

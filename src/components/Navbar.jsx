@@ -29,7 +29,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <ul className={styles.links} role="list">
+        <ul className={styles.links}>
           {navLinks.map((link) => (
             <li key={link.label}>
               <a href={link.href} className={styles.link}>
@@ -59,7 +59,7 @@ export default function Navbar() {
         className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}
         aria-hidden={!menuOpen}
       >
-        <ul role="list">
+        <ul>
           {navLinks.map((link) => (
             <li key={link.label}>
               <a href={link.href} className={styles.mobileLink} onClick={close}>
