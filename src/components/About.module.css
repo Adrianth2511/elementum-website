@@ -1,0 +1,196 @@
+.about {
+  padding: 80px 0 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ── Top Row ──────────────────────────────────────────────────── */
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leftBox { display: flex; align-items: center; }
+
+.borderedBox {
+  border: 2px solid #d63384;
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  position: relative;
+  background: #fff;
+}
+
+.h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+  color: var(--color-dark);
+}
+
+.todayHighlight {
+  background: #bbf7d0;
+  border-radius: 8px;
+  padding: 2px 8px;
+}
+
+.seeHighlight {
+  color: #22c55e;
+  font-style: italic;
+}
+
+.progressUnderline {
+  position: relative;
+  display: inline-block;
+}
+.progressUnderline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #f5c842;
+  border-radius: 2px;
+}
+
+.bodyText {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: gap var(--transition);
+}
+.readMore:hover { gap: 18px; }
+.readMore:hover .line { width: 80px; }
+
+.line {
+  display: inline-block;
+  width: 50px;
+  height: 1.5px;
+  background: var(--color-dark);
+  transition: width var(--transition);
+}
+
+/* ── Circle Images ────────────────────────────────────────────── */
+.rightCircle, .leftCircle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleImg {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.5s ease;
+}
+.circleImg:hover { transform: scale(1.02); }
+.circleImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.circleImg:hover img { transform: scale(1.06); }
+
+/* ── Triangles ────────────────────────────────────────────────── */
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.triangleTopRight {
+  top: -20px;
+  right: 10px;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid #ef4444;
+  opacity: 0.85;
+}
+.triangleBottomLeft {
+  bottom: -10px;
+  left: -10px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86px solid #f87171;
+  opacity: 0.9;
+}
+.triangleBottomLeft2 {
+  bottom: 60px;
+  left: -30px;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 52px solid #ef4444;
+  opacity: 0.7;
+}
+
+/* ── Connector Line ───────────────────────────────────────────── */
+.connectorLine {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  opacity: 0.6;
+}
+
+/* ── Bottom Row ───────────────────────────────────────────────── */
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rightText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Background gradient ─────────────────────────────────────── */
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(253,230,138,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(249,168,212,0.12) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .circleImg { width: 280px; height: 280px; }
+  .h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .topRow, .bottomRow {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .rightCircle { order: -1; }
+  .circleImg { width: 240px; height: 240px; }
+  .about { padding-left: 20px; padding-right: 20px; }
+}
